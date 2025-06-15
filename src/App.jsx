@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import Main from './components/Main'
-import './App.css'
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
+import "./App.css";
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Main />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

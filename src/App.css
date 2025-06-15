@@ -165,22 +165,45 @@ nav {
 main {
   height: 100vh;
   margin: 2rem 3rem;
+}
+
+.main-main {
+  width: fit-content;
   display: grid;
+  gap: 3rem;
   grid-template-columns: repeat(6, 1fr);
 }
 
+.main-main > a {
+  color: var(--text-prime);
+  text-decoration: none;
+}
+
 .main-1 > h2 {
+  font-size: 1.1rem;
   margin: 0.5rem 0rem;
 }
 
-.main-2 > h3 {
+.main-1 > h3 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-size: medium;
 }
 
-.main-2 > p {
+.main-1 > p {
   color: var(--text-sec);
   margin: 0.4rem 0rem;
   font-size: 0.7rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: var(--text-prime);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--bg-prime);
 }
