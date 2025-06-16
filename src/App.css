@@ -1,9 +1,14 @@
+@font-face {
+  font-family: 'DeathNote';
+  src: url('./assets/fonts/Death Note.ttf') format('truetype');
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 :root {
   font-size: 16px;
-  font-family: "Roboto", sans-serif;
+  font-family: "DeathNote", sans-serif;
   --text-prime: #ffffff;
   --text-sec: #ececec;
   --bg-prime: #000000;
@@ -25,6 +30,8 @@ body::-webkit-scrollbar {
 
 nav {
   margin: 0rem 2rem;
+  /* padding-bottom: 1rem; */
+  border-bottom: 5px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,7 +43,7 @@ nav {
 
 .nav-p1 > img:hover {
   transition: var(--transition-default);
-  animation: 2s spin ease;
+  /* animation: 2s spin ease; */
 }
 
 @keyframes spin {
@@ -92,8 +99,8 @@ nav {
 
 .nav-li {
   transition: var(--transition-default);
-  font-size: 1.3rem;
-  font-family: "Roboto", sans-serif;
+  font-size: 1.7rem;
+  /* font-family: "Roboto", sans-serif; */
   font-weight: 600;
   cursor: pointer;
   list-style: none;
@@ -112,9 +119,12 @@ nav {
   transform: scaleX(0);
 }
 
-/* .nav-li:hover {
-  scale: 1.1;
-} */
+.nav-li:hover {
+  border-radius: 0.1rem;
+  padding: 0.3rem;
+  background-color: red;
+  scale: 1.2;
+}
 
 .nav-li:hover::after {
   transform: scaleX(1);
@@ -128,7 +138,8 @@ nav {
 }
 
 .nav-p2 > a {
-  font-weight: 600;
+  font-weight: bolder;
+  font-size: 1.2rem;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   border: 2px solid var(--text-prime);
@@ -152,26 +163,37 @@ nav {
   background-color: var(--bg-prime);
 }
 
-@media(max-width: 850px) {
-  #hide {
-    display: none;
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 1;
   }
-
-  .nav-p2 > a:last-child {
-    display: flex;
+  to {
+    opacity: 1;
+    scale: 1;
   }
-}
-
-main {
-  height: 100vh;
-  margin: 2rem 3rem;
 }
 
 .main-main {
-  width: fit-content;
+  transition: var(--transition-default);
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0%;
+}
+
+main {
+  /* height: 100vh; */
+  margin: 2rem 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.main-main {
+  /* width: fit-content; */
   display: grid;
-  gap: 3rem;
-  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
 }
 
 .main-main > a {
@@ -179,18 +201,30 @@ main {
   text-decoration: none;
 }
 
+.main-1 {
+  transition: var(--transition-default);
+}
+
+.main-1:hover {
+  scale: 1.1;
+}
+
 .main-1 > h2 {
-  font-size: 1.1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
   margin: 0.5rem 0rem;
 }
 
 .main-1 > h3 {
+  display: none;
+  font-family: 'bebas', sans-serif;
   margin: 0;
-  font-size: 1.2rem;
-  font-size: medium;
+  font-size: 1.4rem;
+  /* font-size: medium; */
 }
 
 .main-1 > p {
+  font-family: 'Roboto', sans-serif;
   color: var(--text-sec);
   margin: 0.4rem 0rem;
   font-size: 0.7rem;
@@ -206,4 +240,21 @@ main {
 
 ::-webkit-scrollbar-thumb{
   background-color: var(--bg-prime);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width: 850px) {
+  #hide {
+    display: none;
+  }
+
+  .nav-p2 > a:last-child {
+    display: flex;
+  }
+
 }

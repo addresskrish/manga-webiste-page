@@ -1,4 +1,4 @@
-import mainLogo from "../assets/main-logo.png"
+import mainLogo from "../assets/Mello-removebg-preview.png"
 
 function Navbar() {
 
